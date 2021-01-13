@@ -1,23 +1,23 @@
 #ifndef USER_H
 #define USER_H
-#include <string>
+#include <QString>
 class User
 {
 private:
-    std::string Name;
-    std::string LastName;
-    std::string UserName;
-    std::string Passwd;
+    QString Name;
+    QString LastName;
+    QString UserName;
+    QString Passwd;
 public:
     User();
-    void setName(std::string);
-    std::string getName();
-    void setLastName(std::string);
-    std::string getLastName();
-    void setUserName(std::string);
-    std::string getUserName();
-    void setPasswd(std::string);
-    std::string getPasswd();
+    void setName(QString);
+    QString getName();
+    void setLastName(QString);
+    QString getLastName();
+    void setUserName(QString);
+    QString getUserName();
+    void setPasswd(QString);
+    QString getPasswd();
     ~User();
 };
 

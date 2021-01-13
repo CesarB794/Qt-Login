@@ -5,42 +5,42 @@ User::User()
 
 }
 
-void User::setName(std::string a)
+void User::setName(QString a)
 {
     this->Name=a;
 }
 
-std::string User::getName()
+QString User::getName()
 {
     return this->Name;
 }
 
-void User::setLastName(std::string a)
+void User::setLastName(QString a)
 {
     this->LastName=a;
 }
 
-std::string User::getLastName()
+QString User::getLastName()
 {
     return this->LastName;
 }
 
-void User::setUserName(std::string a)
+void User::setUserName(QString a)
 {
     this->UserName=a;
 }
 
-std::string User::getUserName()
+QString User::getUserName()
 {
     return this->UserName;
 }
 
-void User::setPasswd(std::string a)
+void User::setPasswd(QString a)
 {
     this->Passwd=a;
 }
 
-std::string User::getPasswd()
+QString User::getPasswd()
 {
     return this->Passwd;
 }

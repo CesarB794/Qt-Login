@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>744</width>
-    <height>377</height>
+    <width>600</width>
+    <height>246</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,6 +28,68 @@
    <property name="text">
     <string>Login</string>
    </property>
+  </widget>
+  <widget class="QPushButton" name="AcceptButton">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>200</y>
+     <width>80</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Sing In</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CancelButton">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>200</y>
+     <width>80</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>51</x>
+     <y>91</y>
+     <width>471</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>User:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Password:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="LoginUserBox"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="LoginPasswdBox"/>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

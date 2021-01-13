@@ -1,5 +1,4 @@
 #include "database.h"
-#include <exception>
 #include <iostream>
 #include <QDebug>
 #include <QSqlQuery>
@@ -21,7 +20,7 @@ Database::Database()
 bool Database::Register(const QString &name, const QString &lastName, const QString &user, const QString &passwd)
 {
     QSqlQuery sql;
-    sql.prepare("INSERT INTO Users(name, lastName, userName, password) VALUES(:name, :lastname, :user, :passwd)");
+    qDebug()<<"prepare: "<<sql.prepare("INSERT INTO Users(name, lastName, userName, password) VALUES(:name, :lastname, :user, :passwd)");
     sql.bindValue(":name", name);
     sql.bindValue(":lastname", lastName);
     sql.bindValue(":user", user);
@@ -65,5 +64,5 @@ bool Database::Login(const QString &User, const QString &Passwd)
 
 Database::~Database()
 {
-
+    db.close();
 }

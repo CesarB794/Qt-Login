@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Iniciar Sesion</string>
+     <string>Sing In</string>
     </property>
    </widget>
    <widget class="QPushButton" name="RegistryButton">
@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Registrarse</string>
+     <string>Sing Up</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ExitButton">
@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Salir</string>
+     <string>Exit</string>
     </property>
    </widget>
   </widget>
@@ -60,7 +60,7 @@
      <x>0</x>
      <y>0</y>
      <width>679</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

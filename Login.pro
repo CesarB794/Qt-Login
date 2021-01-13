@@ -14,19 +14,22 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     registrywindow.cpp \
-    user.cpp
+    user.cpp \
+    welcome.cpp
 
 HEADERS += \
     database.h \
     loginwindow.h \
     mainwindow.h \
     registrywindow.h \
-    user.h
+    user.h \
+    welcome.h
 
 FORMS += \
     loginwindow.ui \
     mainwindow.ui \
-    registrywindow.ui
+    registrywindow.ui \
+    welcome.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

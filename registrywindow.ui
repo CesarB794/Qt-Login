@@ -26,7 +26,7 @@
     <string notr="true">font: 20pt &quot;Noto Sans&quot;;</string>
    </property>
    <property name="text">
-    <string>Sing In</string>
+    <string>Sing Up</string>
    </property>
   </widget>
   <widget class="QPushButton" name="SingInButton">
@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Sing In</string>
+    <string>Sing Up</string>
    </property>
   </widget>
   <widget class="QPushButton" name="CancelButton">
@@ -55,7 +55,7 @@
     <string>Cancel</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>

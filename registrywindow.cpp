@@ -1,15 +1,29 @@
 #include "user.h"
-#include "database.h"
+#include <QSqlError>
 #include <QMessageBox>
 #include <QString>
+#include <QDebug>
 #include "registrywindow.h"
 #include "ui_registrywindow.h"
+#include <QSqlDatabase>
 
 RegistryWindow::RegistryWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::RegistryWindow)
 {
     ui->setupUi(this);
+    QSqlDatabase *db;
+    db=QSqlDatabase::addDatabase("QSLQLITE");
+    db->setDatabaseName(path);
+    if(db->open())
+    {
+        qDebug()<<"Database Connection Succesfully.";
+    }
+    else
+    {
+        qDebug()<<"Database Connection Failed.";
+    }
+
 }
 
 RegistryWindow::~RegistryWindow()
@@ -17,10 +31,32 @@ RegistryWindow::~RegistryWindow()
     delete ui;
 }
 
+bool RegistryWindow::Register(const QString &name, const QString &lastName, const QString &user, const QString &passwd)
+{
+    bool Registred;
+    qDebug()<<"prepare: "<<sql.prepare("INSERT INTO Users(name, lastName, userName, password) VALUES(?, ?, ?, ?);");
+    sql.addBindValue(name);
+    sql.addBindValue(lastName);
+    sql.addBindValue(user);
+    sql.addBindValue(passwd);
+    if(sql.exec())
+    {
+       Registred=true;
+       qDebug()<<"Query executed sucessfully";
+    }
+    else
+    {
+        Registred=false;
+        qDebug()<<"Failed to execute query: Error"<<sql.lastError();
+    }
+    return Registred;
+}
+
+
+
 void RegistryWindow::on_SingInButton_clicked()
 {
     User u1=User();
-    Database db=Database();
     QMessageBox M;
     this->ui->NameText->setFocus();
     QString name=this->ui->NameText->text();
@@ -34,7 +70,7 @@ void RegistryWindow::on_SingInButton_clicked()
         u1.setLastName(lastname);
         u1.setUserName(user);
         u1.setPasswd(passwd);
-        if(db.Register(u1.getName(), u1.getLastName(), u1.getUserName(), u1.getPasswd())==true)
+        if(Register(u1.getName(), u1.getLastName(), u1.getUserName(), u1.getPasswd()))
         {
            M.setText("Registred sucessfully.");
         }

@@ -2,6 +2,7 @@
 #define LOGINWINDOW_H
 
 #include <QWidget>
+#include <QSqlQuery>
 
 namespace Ui {
 class LoginWindow;
@@ -17,11 +18,13 @@ public:
 
 private slots:
     void on_CancelButton_clicked();
-
+    bool Login(const QString &, const QString &);
     void on_AcceptButton_clicked();
 
 private:
     Ui::LoginWindow *ui;
+    QString path="user.db";
+    QSqlQuery sql;
 };
 
 #endif // LOGINWINDOW_H

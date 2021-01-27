@@ -2,6 +2,8 @@
 #define REGISTRYWINDOW_H
 
 #include <QWidget>
+#include <QString>
+#include <QSqlQuery>
 
 namespace Ui {
 class RegistryWindow;
@@ -18,10 +20,14 @@ public:
 private slots:
     void on_SingInButton_clicked();
 
+    bool Register(const QString &, const QString &, const QString &, const QString &);
+
     void on_CancelButton_clicked();
 
 private:
     Ui::RegistryWindow *ui;
+    QString path="user.db";
+    QSqlQuery sql;
 };
 
 #endif // REGISTRYWINDOW_H
